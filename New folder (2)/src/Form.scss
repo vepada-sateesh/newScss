@@ -1,0 +1,103 @@
+@import "Formcss2";
+
+
+$myFont: cursive;
+$mybg1: powderblue;
+$mybg2: lightgreen;
+
+.testing > div {
+  width: 50%;
+  margin: auto;
+  padding: 20px 20px;
+  background-color: $mybg2;
+}
+$myColor: red;
+
+label {
+  $myColor: blue !global;
+  color: $myColor;
+}
+
+p {
+  color: $fontColor;
+  background-color: $bg;
+  padding: $paddingforP;
+}
+nav {
+  display: block;
+  border: 2px solid red;
+  margin-bottom: 30px;
+}
+nav {
+  ul {
+    list-style-type: none;
+    margin: 0px;
+    padding: 0px;
+  }
+  li {
+    display: inline-block;
+  }
+  a {
+    padding: 6px 12px;
+    text-decoration: none;
+    font: {
+      size: 30px;
+      family: cursive;
+      weight: bold;
+    }
+    text: {
+      algin: center;
+      decoration: none;
+      transform: capitalize;
+    }
+  }
+}
+
+@mixin important-text {
+    color: red;
+    font-size:25px;
+    font-weight:bold;
+    border:1px solid blue;
+}
+
+h3{
+    @include important-text;
+}
+$h5color : powderblue;
+@mixin special-text($color:yellow){
+    @include important-text;
+    background-color: $color;
+}
+h5{
+    @include special-text($h5color);
+}
+
+
+
+
+
+#basic-btn {
+    border: none;
+    padding: 15px 30px;
+    text-align: center;
+    font-size: 16px;
+    cursor: pointer;
+}
+#report{
+    @extend #basic-btn;
+    color: red;
+    margin-right: 20px;
+}
+#submit{
+    @extend #basic-btn;
+    color : green;
+    margin-left: 50px;
+}
+
+
+
+
+
+
+
+
